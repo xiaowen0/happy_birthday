@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.pageHeader.mobileStyle {
+    background-color: #F44100;
+    color: #FFF;
+}
+
+.pageHeader.mobileStyle .button {
+    color: #FFF;
+    background-color: #F44100;
+    border-color: #E24B14;
+}

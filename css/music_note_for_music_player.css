@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+/* require animation class rotate2d */
+
+.music_note_for_music_player {
+    /*width: 44px;
+    height: 44px;*/
+    position:absolute;
+    right: 10px;
+    top: 40px;
+    z-index: 3;
+}
+.music_note_for_music_player .button_container {
+    width: 64px;
+    height: 64px;
+    background:url(../image/music_c0fda01.gif) transparent no-repeat center center;
+    background-size: contain;
+}
+.music_note_for_music_player .button_container .button {
+
+    position:absolute;
+    z-index:-1;
+
+    width: 32px;
+    height: 32px;
+    padding: 0;
+
+    /* position in the middle of parent */
+    top:50%;
+    left:50%;
+    margin-top: -16px;
+    margin-left:-16px;
+
+    background:url(../image/music_off_8d94020.png) transparent no-repeat center center;
+    background-size: 100% 100%;
+
+    -webkit-animation: rotate2d 1.2s linear infinite;
+    animation: rotate2d 1.2s linear infinite;
+
+    border: none 0;
+
+}
+.music_note_for_music_player.stopped .button_container {
+    background: 0 0;
+}
+.music_note_for_music_player.stopped .button_container .button {
+    -webkit-animation: none;
+    animation: none;
+}
+

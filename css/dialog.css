@@ -1,0 +1,40 @@
+/* dialog */
+
+.dialog {
+	position: fixed;
+	z-index: 2;
+	width: 30%;
+	left: 35%;
+	top: 15%;
+	background: #fff;
+	border: solid 1px #009ef2;
+}
+
+.dialog .dialog_header {
+	background-color: #009ef2;
+	color: #FFF;
+	padding: 10px;
+	overflow: hidden;
+	font-size: 18px;
+}
+
+.dialog .dialog_header .dialog_title {
+	float: left;
+}
+
+.dialog .dialog_header .button_group {
+	float: right;
+}
+
+.dialog .dialog_header .button {
+	font-family: 'Open Sans', 'Helvetica Neue', helvetica, arial, verdana, sans-serif;
+	display: inline-block;
+	background-color: #0093e2;
+	padding: 2px 7px;
+}
+
+.dialog .dialog_body {
+	padding: 10px;
+}
+
+

@@ -1,0 +1,449 @@
+
+.icon.weather {
+	
+	position:relative;
+	
+	height:30px;
+	width:23px;
+	
+	background-image:url(http://i.tq121.com.cn/i/weather2015/png/blue22.png);
+	
+	top: 0;
+}
+.icon.weather.ic {
+	background-image:url(http://i.tq121.com.cn/i/weather2015/png/blue22-1.png);
+	height:30px;
+	margin-top:9px;
+	width:28px;
+	float:left
+}
+.icon.weather {
+	margin:0 auto;
+	background-repeat:no-repeat;
+	background-position:-640px 240px;
+	display:block
+}
+.icon.weather.jpg30 {
+	background-image:url(http://i.tq121.com.cn/i/weather2015/png/blue30.png);
+	height:30px;
+	width:31px
+}
+.icon.weather.png30 {
+	background-image:url(http://i.tq121.com.cn/i/weather2015/png/blue30.png);
+	height:30px;
+	width:31px
+}
+.icon.weather.jpg50 {
+	background-image:url(http://i.tq121.com.cn/i/weather2015/png/blue50.png);
+	height:50px;
+	width:50px;
+}
+.icon.weather.jpg80 {
+	background-image:url(image/weather_icons_blue_80.png);
+	height:80px;
+	width:80px;
+}
+.icon.weather.white80 {
+	background-image:url(image/weather_icons_white_80.png);
+	height:80px;
+	width:80px
+}
+
+.icon.weather.png40 {
+	background-image:url(http://i.tq121.com.cn/i/weather2015/png/blue30.png);
+	height:30px;
+	width:30px
+}
+.icon.weather.png80 {
+	background-image:url(http://i.tq121.com.cn/i/weather2015/png/blue80.png);
+	height:80px;
+	width:80px
+}
+.around li:hover .icon.weather.jpg30 {
+	background-image:url(http://i.tq121.com.cn/i/weather2015/png/white30.png);
+	height:30px;
+	width:31px
+}
+.on .icon.weather.jpg50 {
+	background-image:url(http://i.tq121.com.cn/i/weather2015/png/blue50.png);
+	height:50px;
+	width:50px
+}
+.on .icon.weather.jpg80 {
+	background-image:url(http://i.tq121.com.cn/i/weather2015/png/blue80.png);
+	height:80px;
+	width:80px
+}
+.sk .icon.weather.jpg80 {
+	background-image:url(http://i.tq121.com.cn/i/weather2015/png/blue80.png);
+	height:80px;
+	width:80px
+}
+.icon.weather.d0,
+.icon.weather.sunny {
+	background-position:0 0
+}
+.icon.weather.d1 {
+	background-position:-80px 0
+}
+.icon.weather.d2,
+.icon.weather.cloudy {
+	background-position:-160px 0
+}
+.icon.weather.d3 {
+	background-position:-240px 0
+}
+.icon.weather.d4 {
+	background-position:-320px 0
+}
+.icon.weather.d5 {
+	background-position:-400px 0
+}
+.icon.weather.d6 {
+	background-position:-480px 0
+}
+.icon.weather.d7 {
+	background-position:-560px 0
+}
+.icon.weather.d8 {
+	background-position:-640px 0
+}
+.icon.weather.d9 {
+	background-position:0 -80px
+}
+.icon.weather.d00 {
+	background-position:0 0
+}
+.icon.weather.d01 {
+	background-position:-80px 0
+}
+.icon.weather.d02 {
+	background-position:-160px 0
+}
+.icon.weather.d03 {
+	background-position:-240px 0
+}
+.icon.weather.d04 {
+	background-position:-320px 0
+}
+.icon.weather.d05 {
+	background-position:-400px 0
+}
+.icon.weather.d06 {
+	background-position:-480px 0
+}
+.icon.weather.d07 {
+	background-position:-560px 0
+}
+.icon.weather.d08 {
+	background-position:-640px 0
+}
+.icon.weather.d09 {
+	background-position:0 -80px
+}
+.icon.weather.d10 {
+	background-position:-80px -80px
+}
+.icon.weather.d11 {
+	background-position:-160px -80px
+}
+.icon.weather.d12 {
+	background-position:-240px -80px
+}
+.icon.weather.d13 {
+	background-position:-320px -80px
+}
+.icon.weather.d14 {
+	background-position:-400px -80px
+}
+.icon.weather.d15 {
+	background-position:-480px -80px
+}
+.icon.weather.d16 {
+	background-position:-560px -80px
+}
+.icon.weather.d17 {
+	background-position:-640px -80px
+}
+.icon.weather.d18 {
+	background-position:0 -160px
+}
+.icon.weather.d19 {
+	background-position:-80px -160px
+}
+.icon.weather.d20 {
+	background-position:-160px -160px
+}
+.icon.weather.d21 {
+	background-position:-240px -160px
+}
+.icon.weather.d22 {
+	background-position:-320px -160px
+}
+.icon.weather.d23 {
+	background-position:-400px -160px
+}
+.icon.weather.d24 {
+	background-position:-480px -160px
+}
+.icon.weather.d25 {
+	background-position:-560px -160px
+}
+.icon.weather.d26 {
+	background-position:-640px -160px
+}
+.icon.weather.d27 {
+	background-position:0 -240px
+}
+.icon.weather.d28 {
+	background-position:-80px -240px
+}
+.icon.weather.d29 {
+	background-position:-160px -240px
+}
+.icon.weather.d30 {
+	background-position:-240px -240px
+}
+.icon.weather.d31 {
+	background-position:-320px -240px
+}
+.icon.weather.d32 {
+	background-position:-400px -240px
+}
+.icon.weather.d33 {
+	background-position:-480px -240px
+}
+.icon.weather.d53 {
+	background-position:-560px -240px
+}
+.icon.weather.d57 {
+	background-position:-720px 0
+}
+.icon.weather.d32 {
+	background-position:-720px -80px
+}
+.icon.weather.d49 {
+	background-position:-720px -160px
+}
+.icon.weather.d58 {
+	background-position:-720px -240px
+}
+.icon.weather.d54 {
+	background-position:-800px 0
+}
+.icon.weather.d55 {
+	background-position:-800px -80px
+}
+.icon.weather.d56 {
+	background-position:-800px -160px
+}
+.icon.weather.d301 {
+	background-position:-880px 0
+}
+.icon.weather.d302 {
+	background-position:-880px -80px
+}
+.icon.weather.n0 {
+	background-position:0 -320px
+}
+.icon.weather.n1 {
+	background-position:-80px -320px
+}
+.icon.weather.n2 {
+	background-position:-160px -320px
+}
+.icon.weather.n3 {
+	background-position:-240px -320px
+}
+.icon.weather.n4 {
+	background-position:-320px -320px
+}
+.icon.weather.n5 {
+	background-position:-400px -320px
+}
+.icon.weather.n6 {
+	background-position:-480px -320px
+}
+.icon.weather.n7 {
+	background-position:-560px -320px
+}
+.icon.weather.n8 {
+	background-position:-640px -320px
+}
+.icon.weather.n9 {
+	background-position:0 -400px
+}
+.icon.weather.n00 {
+	background-position:0 -320px
+}
+.icon.weather.n01 {
+	background-position:-80px -320px
+}
+.icon.weather.n02 {
+	background-position:-160px -320px
+}
+.icon.weather.n03 {
+	background-position:-240px -320px
+}
+.icon.weather.n04 {
+	background-position:-320px -320px
+}
+.icon.weather.n05 {
+	background-position:-400px -320px
+}
+.icon.weather.n06 {
+	background-position:-480px -320px
+}
+.icon.weather.n07 {
+	background-position:-560px -320px
+}
+.icon.weather.n08 {
+	background-position:-640px -320px
+}
+.icon.weather.n09 {
+	background-position:0 -400px
+}
+.icon.weather.n10 {
+	background-position:-80px -400px
+}
+.icon.weather.n11 {
+	background-position:-160px -400px
+}
+.icon.weather.n12 {
+	background-position:-240px -400px
+}
+.icon.weather.n13 {
+	background-position:-320px -400px
+}
+.icon.weather.n14 {
+	background-position:-400px -400px
+}
+.icon.weather.n15 {
+	background-position:-480px -400px
+}
+.icon.weather.n16 {
+	background-position:-560px -400px
+}
+.icon.weather.n17 {
+	background-position:-640px -400px
+}
+.icon.weather.n18 {
+	background-position:0 -480px
+}
+.icon.weather.n19 {
+	background-position:-80px -480px
+}
+.icon.weather.n20 {
+	background-position:-160px -480px
+}
+.icon.weather.n21 {
+	background-position:-240px -480px
+}
+.icon.weather.n22 {
+	background-position:-320px -480px
+}
+.icon.weather.n23 {
+	background-position:-400px -480px
+}
+.icon.weather.n24 {
+	background-position:-480px -480px
+}
+.icon.weather.n25 {
+	background-position:-560px -480px
+}
+.icon.weather.n26 {
+	background-position:-640px -480px
+}
+.icon.weather.n27 {
+	background-position:0 -560px
+}
+.icon.weather.n28 {
+	background-position:-80px -560px
+}
+.icon.weather.n29 {
+	background-position:-160px -560px
+}
+.icon.weather.n30 {
+	background-position:-240px -560px
+}
+.icon.weather.n31 {
+	background-position:-320px -560px
+}
+.icon.weather.n32 {
+	background-position:-400px -560px
+}
+.icon.weather.n33 {
+	background-position:-480px -560px
+}
+.icon.weather.n53 {
+	background-position:-560px -560px
+}
+.icon.weather.n57 {
+	background-position:-720px -320px
+}
+.icon.weather.n32 {
+	background-position:-720px -400px
+}
+.icon.weather.n49 {
+	background-position:-720px -480px
+}
+.icon.weather.n58 {
+	background-position:-720px -560px
+}
+.icon.weather.n54 {
+	background-position:-800px -320px
+}
+.icon.weather.n55 {
+	background-position:-800px -400px
+}
+.icon.weather.n56 {
+	background-position:-800px -480px
+}
+.icon.weather.n301 {
+	background-position:-880px -320px
+}
+.icon.weather.n302 {
+	background-position:-880px -400px
+}
+
+.icon.sunrise {
+	background-image: url("image/weather_icons_miscellaneous.png");
+	background-repeat: no-repeat;
+	background-position: -33px -269px;
+	width: 22px;
+	height: 22px;
+}
+
+.icon.sunset {
+	background-image: url("image/weather_icons_miscellaneous.png");
+	background-repeat: no-repeat;
+	background-position: -2px -269px;
+	width: 22px;
+	height: 22px;
+}
+
+.icon.humidity {
+	background-image: url("image/weather_icons_miscellaneous.png");
+	background-repeat: no-repeat;
+	background-position: -2px -289px;
+	width: 24px;
+	height: 24px;
+}
+
+.icon.windDirection {
+	background-image: url("image/weather_icons_miscellaneous.png");
+	background-repeat: no-repeat;
+	background-position: -36px -291px;
+	width: 24px;
+	height: 24px;
+}
+
+.icon.leaf {
+	background-image: url("image/weather_icons_miscellaneous.png");
+	background-repeat: no-repeat;
+	background-position: -2px -314px;
+	width: 24px;
+	height: 24px;
+}
+
+

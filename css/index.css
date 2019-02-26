@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+html,
+body {
+    height: 100%;
+}
+
+a {
+    color: #FFF;
+}
+
+body, div {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+}
+
+.page {
+    max-width: 500px;
+    height: 100%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+    background: url(../image/bg_happy_birthday.jpg) no-repeat center bottom;
+    background-size: cover;
+}
+
+.footer {
+    position: absolute;
+    z-index: 1;
+
+    width: 100%;
+    left: 0;
+    bottom: 0;
+
+    color: #999;
+    text-align: center;
+    padding: 4px;
+
+    font-size: 14px;
+}
+
+@media screen and (min-width: 640px) {
+    .footer {
+        font-size: 16px;
+    }
+}
+
+.footer a,
+.footer a:visited {
+    color: #999;
+}
+
+#main_music_player {
+    z-index: 2;
+}
+
+.playButton {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    line-height: 30px;
+    border-radius: 4px;
+    padding: 0 10px;
+}
+
+.article {
+    position: absolute;
+    z-index: 1;
+	/*background-color: #000;*/
+	/*background-color: rgba(0, 0, 0, 0.55);*/
+
+    left: 50%;
+    /*top: 60px;*/
+    top: 6rem;
+	
+	width: 20rem;
+	height: 20rem;
+	border-radius: 10rem;
+	margin-left: -10rem;
+
+    font-size: 1.4rem;
+
+    overflow: visible;
+
+    text-align: center;
+
+    background: transparent;
+}
+
+.article .textBg {
+    background-color: #000;
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.article .text_box {
+	padding-left: 2.3rem;
+    padding-top: 4.5rem;
+    padding-right: 1.7rem;
+}
+
+@media screen and (min-width: 720px) {
+	.article {
+		width: 350px;
+		height: 350px;
+		border-radius: 175px;
+		margin-left: -175px;
+		font-size: 28px;
+        top: 40px;
+	}
+	
+	.article .text_box {
+		padding-left: 60px;
+		padding-top: 70px;
+	}
+}
+
+.article p {
+
+    line-height: 2.2rem;
+
+    margin-bottom: 20px;
+    color: #FFF;
+}
+
+@media screen and (min-width: 720px) {
+    .article p {
+        margin-bottom: 10px;
+        line-height: 46px;
+    }
+}
+
+.text_bg {
+    display: inline-block;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.play_error_dialog {
+    z-index: 99;
+    width: 274px;
+    margin-left: -137px;
+    left: 50%;
+    top: 200px;
+    border-color: #D8D8D8;
+    border-radius: 6px;;
+}
+
+.play_error_dialog .dialog_header {
+    /*background-color: #1a1a1a;*/
+    border-radius: 4px 4px 0 0;
+}
+
+.play_error_dialog .dialog_header .close_button {
+    /*background-color: #4a4a4a;*/
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    text-align: center;
+    font-family: Arial;
+    color: #B0B0B0;
+    border-radius: 4px;
+}
+
+.continuePlayDialog {
+    border-radius: 4px;
+}
+
+.continuePlayDialog .inner_box {
+    padding: 0 10px;
+}
+
+
+

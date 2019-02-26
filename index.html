@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <meta name="renderer" content="webkit|ie-comp|ie-stand"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <!-- dns prefetch -->
+    <link rel="dns-prefetch" href="http://cdn.bootcss.com/"/>
+
+    <title>Happy Birthday</title>
+
+    <!-- style library -->
+    <link href="style/common_style_classes/common_style_classes.css" rel="stylesheet"/>
+    <link href="style/common_style_classes/common_component.css" rel="stylesheet"/>
+
+    <link href="css/index.css" rel="stylesheet"/>
+    <link href="css/music_note_for_music_player.css" rel="stylesheet"/>
+
+    <!-- HTML5 tag support for IE 10 or older -->
+    <!--[if lt IE 10]>
+    <script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<!-- 主要的页面容器，最大宽度为720px -->
+<div class="page">
+
+    <!-- 一个音符，可以播放音乐，播放时旋转音符，停止时音符停止 -->
+    <div class="music_player music_note_for_music_player music stopped" id="main_music_player">
+
+        <audio preload="auto" loop="loop" class="audio">
+            <source src="music/Twins%20-%20Happy%20Birthday.mp3" type="audio/mpeg"/>
+			<source src="music/Twins%20-%20Happy%20Birthday.ogg" type="audio/ogg"/>
+        </audio>
+
+        <!-- 装放音符的容器，同时有一个有音乐效果的背景 -->
+        <div class="button_container">
+            <!-- 音符按钮 -->
+            <div class="button"></div>
+        </div>
+    </div>
+
+    <!-- 一篇祝福信文章 -->
+    <article class="article" style="display: none;">
+		<div class="text_box">
+			<p><span class="textBg">原创音乐交流群祝你</span></p>
+			<p><span class="textBg">生日快乐</span></p>
+			<p><span class="textBg">心想事成</span></p>
+		</div>
+    </article>
+
+    <footer class="footer page_footer">
+        <div class="inner_box">
+            <p class="producer" style="display: none;">网页制作：小文 &nbsp;音乐主唱：Twins</p>
+            <p>
+                <a href="javascript:;" class="play_error_help_link">无法播放或播放不同步？</a>
+            </p>
+        </div>
+    </footer>
+
+    <div class="loading_panel" style="display: none;"></div>
+
+    <div class="continuePlayDialog dialog" style="display: none; width: 240px; margin-left: -120px;">
+        <div class="inner_box">
+            <p>加载完毕，本网页包含音乐。</p>
+            <p class="button_box align_center">
+                <a class="button playButton" href="javascript:;">开始播放</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="play_error_dialog dialog" style="display: none;">
+        <header class="dialog_header">
+            <div class="dialog_title title">播放错误帮助</div>
+            <div class="button_group">
+                <a href="javascript:;" class="button close_button">X</a>
+            </div>
+        </header>
+        <div class="dialog_body">
+            <p>一直在加载中的状态：一般是由于网络状况不好引起的，请尝试重新打开网页，或使用 3G 以上网络，或切换到其他 Wifi 网络。</p>
+            <p>文字显示了可还没有播放音乐：尝试加大设备的音量，或使用其他浏览器打开。</p>
+            <p>没有任何文字内容显示出来：尝试使用其他浏览器打开。</p>
+        </div>
+    </div>
+
+    <div class="debug_info"></div>
+
+</div>
+
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script>
+    if (typeof($) === 'undefined') {
+        document.writeln("\<script src=\"asset/jquery/jquery-3.1.0.min.js\"><\/script>");
+    }
+</script>
+
+
+<script src="script/common_script/common_function.js"></script>
+<script src="script/common_script/common_action.js"></script>
+
+<script src="js/common.js"></script>
+<script src="js/music_player.js"></script>
+<script src="js/play_letter.js"></script>
+<script src="js/home_page.js"></script>
+
+</body>
+</html>
