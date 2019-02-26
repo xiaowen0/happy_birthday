@@ -14,7 +14,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;网址使用参数 who_to_who 指定文件名（不需要加.txt）即可。
 
-&nbsp;&nbsp;&nbsp;&nbsp;比如王祖蓝给李亚男的生日贺卡：happy_birthday/?who_to_who=huangzulan_to_liyanan
+&nbsp;&nbsp;&nbsp;&nbsp;比如王祖蓝给李亚男的生日贺卡：<a href="https://xiaowen0.github.io/happy_birthday/?who_to_who=huangzulan_to_liyanan">https://xiaowen0.github.io/happy_birthday/?who_to_who=huangzulan_to_liyanan</a>
 
 &nbsp;&nbsp;&nbsp;&nbsp;测试好后，提交，联系我，我检查过没有问题就合并到主分支。
 
