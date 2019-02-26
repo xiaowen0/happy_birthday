@@ -119,6 +119,35 @@ $(document).ready(function ()
 {
     var user_agent = navigator.userAgent;
 
+    // load blessing text
+    var blessingTextFile = '';
+    var who_to_who = getUrlParam('who_to_who') || '';
+    if (who_to_who)
+    {
+        blessingTextFile = 'blessing/' + who_to_who + '.txt';
+    }
+    else
+    {
+        blessingTextFile = 'blessing.txt';
+    }
+
+    $.ajax(blessingTextFile, {
+        success : function (result){
+            var lines = result.split("\n");
+            for (var i=0; i<lines.length; i++)
+            {
+                if (lines[i] === '')
+                {
+                    continue;
+                }
+                $('.article .blessingText').append('<p><span class="textBg">' + lines[i] + '</span></p>');
+            }
+        },
+        error : function (){
+            alert('祝福语加载失败，请检查文件路径是否正确，或是否已合并到主分支。');
+        }
+    });
+
     // define preload image
     var bg_image_url = 'image/bg_happy_birthday.jpg';
 
