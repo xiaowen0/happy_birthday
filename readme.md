@@ -4,7 +4,9 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;这是一个网页版贺卡，任何智能设备都可以浏览，可以在手机上发送给朋友，没有任何广告。
 
-&nbsp;&nbsp;&nbsp;&nbsp;Demo：<a href="https://xiaowen0.github.io/happy_birthday/">https://xiaowen0.github.io/happy_birthday/</a>
+&nbsp;&nbsp;&nbsp;&nbsp;Demo（全球）：<a href="https://xiaowen0.github.io/happy_birthday/">https://xiaowen0.github.io/happy_birthday/</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;Demo（中国大陆）：<a href="http://oschina_xiaowen.gitee.io/happy_birthday">http://oschina_xiaowen.gitee.io/happy_birthday</a>
 
 &nbsp;&nbsp;&nbsp;&nbsp;这个贺卡采用纵向设计，手机浏览是100%覆盖自适应显示，台式电脑、手提电脑、平板电脑上显示在正中间。内容包含祝福语和一首音乐（Twins 版本的 Happy Birthday），祝福语可以自己自定义。
 
