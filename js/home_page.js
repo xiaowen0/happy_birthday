@@ -31,7 +31,7 @@ function startPlayContent()
 function init_music_player_status()
 {
     // check audio
-    var music_player_audio_control = $('#main_music_player .audio')[0];
+    var music_player_audio_control = getElement('mainAudioController');
 
     // check audio support
     if (typeof(music_player_audio_control.play) != 'function')  // not supported
@@ -43,7 +43,7 @@ function init_music_player_status()
     }
 
     // set audio icon event
-    $('#main_music_player').on('click', function () {
+    $('#mainAudioController').on('click', function () {
         toggleMusic();
     });
 
@@ -74,7 +74,7 @@ function init_music_player_status()
             }
 
             // show continue play panel to request user play audio
-            $('.continuePlayDialog').fadeIn();
+            // $('.continuePlayDialog').fadeIn();
         }
     });
 
@@ -113,6 +113,16 @@ function init_music_player_status()
     music_player_audio_control.load();
 
     return true;
+}
+
+/**
+ * preload music
+ */
+function preloadMusic()
+{
+    var audioControl = getElement('mainAudioController');
+    audioControl.play();
+    audioControl.pause();
 }
 
 $(document).ready(function ()
@@ -170,8 +180,15 @@ $(document).ready(function ()
                     $('.loading_panel').fadeOut();
                 }
 
-                // show continue play panel to request user play audio
-                $('.continuePlayDialog').fadeIn();
+                // try to play music, smartphone's browser maybe prevent auto play music.
+                // 注意：安卓和苹果手机自带浏览器禁止未经用户允许自动播放音频（禁止在非时间中调用 play 方法）
+                // note: Android and iOS browser not allow autoplay audio
+                var status = playMusic();
+                if (!status)
+                {
+                    // show continue play panel to request user play audio
+                    $('.continuePlayDialog').fadeIn();
+                }
             }
         });
     });

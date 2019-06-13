@@ -178,5 +178,10 @@ body {
     padding: 0 10px;
 }
 
-
+.button.musicNote {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    z-index: 3;
+}
 
