@@ -13,11 +13,15 @@
     <title>Happy Birthday</title>
 
     <!-- style library -->
-    <link href="style/common_style_classes/common_style_classes.css" rel="stylesheet"/>
-    <link href="style/common_style_classes/common_component.css" rel="stylesheet"/>
+    <link href="style/common_style_classes/common_component.min.css" rel="stylesheet"/>
+    <link href="style/common_style_classes/common_style_classes.min.css" rel="stylesheet"/>
 
     <link href="css/index.css" rel="stylesheet"/>
-    <link href="css/music_note_for_music_player.css" rel="stylesheet"/>
+    <!--<link href="css/music_note_for_music_player.css" rel="stylesheet"/>-->
+
+    <style>
+        .button { text-decoration: none; }
+    </style>
 
     <!-- HTML5 tag support for IE 10 or older -->
     <!--[if lt IE 10]>
@@ -26,25 +30,12 @@
 
 </head>
 
-<body>
+<body data-base-width="375">
 
 <!-- 主要的页面容器，最大宽度为720px -->
 <div class="page">
 
-    <!-- 一个音符，可以播放音乐，播放时旋转音符，停止时音符停止 -->
-    <div class="music_player music_note_for_music_player music stopped" id="main_music_player">
-
-        <audio preload="auto" loop="loop" class="audio">
-            <source src="music/Twins%20-%20Happy%20Birthday.mp3" type="audio/mpeg"/>
-			<source src="music/Twins%20-%20Happy%20Birthday.ogg" type="audio/ogg"/>
-        </audio>
-
-        <!-- 装放音符的容器，同时有一个有音乐效果的背景 -->
-        <div class="button_container">
-            <!-- 音符按钮 -->
-            <div class="button"></div>
-        </div>
-    </div>
+    <a class="button musicNote small stopped" id="mainMusicControlButton"></a>
 
     <!-- 一篇祝福信文章 -->
     <article class="article" style="display: none;">
@@ -59,22 +50,24 @@
         <div class="inner_box">
             <!--<p class="producer">网页制作：小文 &nbsp;音乐主唱：Twins</p>-->
             <p>
-                <a href="javascript:;" class="play_error_help_link">无法播放或播放不同步？</a>
+                <a href="javascript:;" class="play_error_help_link" onclick="$('.play_error_dialog').fadeIn();">无法播放或播放不同步？</a>
             </p>
         </div>
     </footer>
 
     <div class="loading_panel" style="display: none;"></div>
 
+    <!-- 移动端浏览器部分会阻止音乐自动播放，这时候需要显示一个对话框，提示用户点击继续播放。 -->
     <div class="continuePlayDialog dialog" style="display: none; width: 240px; margin-left: -120px;">
         <div class="inner_box">
             <p>加载完毕，本网页包含音乐。</p>
             <p class="button_box align_center">
-                <a class="button playButton" href="javascript:;">开始播放</a>
+                <a class="button playButton" href="javascript:;" onclick="onContinuePlay();">开始播放</a>
             </p>
         </div>
-    </div>
+    </div><!-- end .continuePlayDialog -->
 
+    <!-- 错误指引对话框 -->
     <div class="play_error_dialog dialog" style="display: none;">
         <header class="dialog_header">
             <div class="dialog_title title">播放错误帮助</div>
@@ -87,9 +80,14 @@
             <p>文字显示了可还没有播放音乐：尝试加大设备的音量，或使用其他浏览器打开。</p>
             <p>没有任何文字内容显示出来：尝试使用其他浏览器打开。</p>
         </div>
-    </div>
+    </div><!-- end .play_error_dialog -->
 
     <div class="debug_info"></div>
+
+    <audio preload="" loop="" class="audio hide" id="mainAudioController">
+        <source src="music/Twins%20-%20Happy%20Birthday.mp3" type="audio/mpeg"/>
+        <source src="music/Twins%20-%20Happy%20Birthday.ogg" type="audio/ogg"/>
+    </audio>
 
 </div>
 
@@ -101,11 +99,10 @@
 </script>
 
 
-<script src="script/common_script/common_function.js"></script>
-<script src="script/common_script/common_action.js"></script>
+<script src="script/common_script/common_function.min.js"></script>
+<script src="script/common_script/common_action.min.js"></script>
 
 <script src="js/common.js"></script>
-<script src="js/music_player.js"></script>
 <script src="js/play_letter.js"></script>
 <script src="js/home_page.js"></script>
 

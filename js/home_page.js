@@ -27,6 +27,30 @@ function startPlayContent()
     }, 1400);
 }
 
+function onContinuePlay()
+{
+    // authorized to play autio
+    request_user_play_audio = true;
+
+    // hide the continue play panel
+    $('.continuePlayDialog').fadeOut();
+
+    // start play content
+    // 微信的一个 Bug， 触发 oncanplay 后仍然无法立刻播放
+    // 需要先快速执行 play() 和 pause() 进行手动预加载，并延迟执行播放操作
+    preloadMusic();
+    if (isWeixin())
+    {
+        window.setTimeout(function(){
+            startPlayContent();
+        }, 3000);
+    }
+    else
+    {
+        startPlayContent();
+    }
+}
+
 // init the music player
 function init_music_player_status()
 {
@@ -83,32 +107,6 @@ function init_music_player_status()
         //$('.debug_info').append('<p>audio trigger a onloadeddata event.</p>');
     });
 
-    // button for continue play content
-    $('.continuePlayDialog .button').on('click', function()
-    {
-        // authorized to play autio
-        request_user_play_audio = true;
-
-        // hide the continue play panel
-        $('.continuePlayDialog').fadeOut();
-
-        // start play content
-        // 微信的一个 Bug， 触发 oncanplay 后仍然无法立刻播放
-        // 需要先快速执行 play() 和 pause() 进行手动预加载，并延迟执行播放操作
-        preloadMusic();
-        if (isWeixin())
-        {
-            window.setTimeout(function(){
-                startPlayContent();
-            }, 3000);
-        }
-        else
-        {
-            startPlayContent();
-        }
-
-    });
-
     // start load media
     music_player_audio_control.load();
 
@@ -127,8 +125,6 @@ function preloadMusic()
 
 $(document).ready(function ()
 {
-    var user_agent = navigator.userAgent;
-
     // load blessing text
     var blessingTextFile = '';
     var who_to_who = getUrlParam('who_to_who') || '';
@@ -160,10 +156,6 @@ $(document).ready(function ()
 
     // define preload image
     var bg_image_url = 'image/bg_happy_birthday.jpg';
-
-    $('.play_error_help_link').on('click', function(){
-        $('.play_error_dialog').fadeIn();
-    });
 
     // show loading panel
     $('.loading_panel').fadeIn("normal", "linear", function()

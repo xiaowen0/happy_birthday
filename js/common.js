@@ -51,24 +51,3 @@ if (typeof(ImagePreloadHelper) === 'undefined')
     })(ImagePreloadHelper);
 }
 
-
-
-$(document).ready(function()
-{
-    // $('.dialog .close_button').on('click', function(){
-    //     var dialog = $(this).parents('.dialog');
-    //     dialog.fadeOut();
-    // });
-
-    $(window).on('resize', function()
-    {
-        var window_width = document.body.offsetWidth;
-        var ratio = (10 * window_width / 320) + "px";
-        $('html').css('font-size', ratio);
-    }).resize();
-});
-
-
-
-
-
