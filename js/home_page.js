@@ -1,10 +1,59 @@
 /**
- * Created by wen on 2016/12/30.
+ * @author  Kevin
  */
 
 var request_user_play_audio = false;
 var images_already = false;
 var music_already = false;
+
+if (typeof(ImagePreloadHelper) === 'undefined')
+{
+    var ImagePreloadHelper = new Object();
+    (function(helper)
+    {
+        helper.count = 0;
+        helper.loaded = 0;
+        helper.list = [];
+        helper.image_list = [];
+        helper.callback = (function(){;});
+
+        helper.preload = (function(list, callback)
+        {
+            for (var i=0; i<list.length; i++)
+            {
+                // save image url to list
+                this.list.push(list[i]);
+                this.count++;
+
+                // create a image object to load url
+                var image_item = new Image();
+                image_item.onload = (function(){
+                    ImagePreloadHelper.imageLoadedCallback(this);
+                });
+                image_item.src = list[i];
+
+                // save image to list
+                this.image_list.push(image_item);
+            }
+
+            // set callback function
+            if (typeof(callback) == "function")
+            {
+                this.callback = callback;
+            }
+        });
+
+        helper.imageLoadedCallback = (function(image)
+        {
+            this.loaded++;
+            if (this.loaded == this.count)
+            {
+                this.callback();
+            }
+        });
+
+    })(ImagePreloadHelper);
+}
 
 function startPlayContent()
 {
@@ -27,6 +76,20 @@ function startPlayContent()
     }, 1400);
 }
 
+function playArticle()
+{
+    if (isWeixin())
+    {
+        window.setTimeout(function(){
+            startPlayContent();
+        }, 3000);
+    }
+    else
+    {
+        startPlayContent();
+    }
+}
+
 function onContinuePlay()
 {
     // authorized to play autio
@@ -39,16 +102,8 @@ function onContinuePlay()
     // 微信的一个 Bug， 触发 oncanplay 后仍然无法立刻播放
     // 需要先快速执行 play() 和 pause() 进行手动预加载，并延迟执行播放操作
     preloadMusic();
-    if (isWeixin())
-    {
-        window.setTimeout(function(){
-            startPlayContent();
-        }, 3000);
-    }
-    else
-    {
-        startPlayContent();
-    }
+
+    playArticle();
 }
 
 // init the music player
@@ -67,9 +122,9 @@ function init_music_player_status()
     }
 
     // set audio icon event
-    $('#mainAudioController').on('click', function () {
-        toggleMusic();
-    });
+    // $('#mainAudioController').on('click', function () {
+    //     toggleMusic();
+    // });
 
     music_player_audio_control.onerror = (function () {
         var log_text = '非常抱歉：加载音乐失败,请尝试刷新页面或更换浏览器。';
@@ -123,7 +178,11 @@ function preloadMusic()
     audioControl.pause();
 }
 
-$(document).ready(function ()
+/**
+ * load blessing text
+ * @param  Function  callback
+ */
+function loadBlessingText(callback)
 {
     // load blessing text
     var blessingTextFile = '';
@@ -148,25 +207,50 @@ $(document).ready(function ()
                 }
                 $('.article .blessingText').append('<p><span class="textBg">' + lines[i] + '</span></p>');
             }
+
+            if (callback)
+            {
+                callback();
+            }
         },
         error : function (){
             alert('祝福语加载失败，请检查文件路径是否正确，或是否已合并到主分支。');
         }
     });
+}
 
-    // define preload image
-    var bg_image_url = 'image/bg_happy_birthday.jpg';
+/*
+ * step:
+ * 1. preload music
+ * 2. show loading panel
+ * 3. preload background image
+ * 4. load blessing text
+ */
+$(document).ready(function ()
+{
+    log('init music player');
+    init_music_player_status();
 
     // show loading panel
+    log('show loading panel');
     $('.loading_panel').fadeIn("normal", "linear", function()
     {
+        log('preload image');
+        // define preload image
+        var bg_image_url = 'image/bg_happy_birthday.jpg';
+
         ImagePreloadHelper.preload([bg_image_url], function(){
 
+            log('preload image finished.');
             images_already = true;
 
-            if (images_already && music_already)
-            {
+            log('load blessing text');
+            loadBlessingText(function(){
+
+                log('load blessing text finished.');
+
                 // hide loading panel
+                log('hide loading panel');
                 if ($('.loading_panel').is(':visible'))
                 {
                     $('.loading_panel').fadeOut();
@@ -175,16 +259,30 @@ $(document).ready(function ()
                 // try to play music, smartphone's browser maybe prevent auto play music.
                 // 注意：安卓和苹果手机自带浏览器禁止未经用户允许自动播放音频（禁止在非时间中调用 play 方法）
                 // note: Android and iOS browser not allow autoplay audio
+                log('try to play music.');
                 var status = playMusic();
                 if (!status)
                 {
                     // show continue play panel to request user play audio
+                    log('play music fail, show continue play dialog.');
                     $('.continuePlayDialog').fadeIn();
                 }
-            }
-        });
-    });
+                else
+                {
+                    log('music already played.');
 
-    init_music_player_status();
+                    log('play the article.');
+                    playArticle();
+                }
+
+            });
+
+            // if (images_already && music_already)
+            // {
+            //
+            // }
+        });
+
+    });
 });
 
